@@ -261,7 +261,7 @@ function fitRocketUpright(model) {
   model.position.y -= box.min.y;
 
   // Scale to ~110 world units tall if wildly different
-  const targetH = 110;
+  const targetH = 55; // playable on-screen height
   if (size.y > 1) {
     const s = targetH / size.y;
     if (Math.abs(s - 1) > 0.05) {

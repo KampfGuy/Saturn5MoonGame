@@ -73,9 +73,9 @@ let atmosphereActive = true;
 
 const WORLD = {
   // Launch altitudes (game units ≈ meters / 1)
-  stage1Alt: 95,
-  stage2Alt: 175,
-  spaceAlt: 230,
+  stage1Alt: 70,
+  stage2Alt: 130,
+  spaceAlt: 170,
   // Cruise
   moonX: 900,
   moonY: 120,
