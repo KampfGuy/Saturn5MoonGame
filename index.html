@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saturn V → Moon — Neil Armstrong</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="ui">
+      <div id="phase-label">LAUNCH</div>
+      <div id="instructions">Hold SPACE or W to thrust. Launch the Saturn V!</div>
+      <div id="hud">
+        <span id="alt">ALT: 0 m</span>
+        <span id="vel">VEL: 0 m/s</span>
+        <span id="stage">STAGE: S-IC</span>
+      </div>
+    </div>
+    <div id="overlay" class="hidden">
+      <div id="overlay-content">
+        <h1 id="overlay-title"></h1>
+        <p id="overlay-text"></p>
+        <button id="restart-btn" type="button">Restart Mission</button>
+      </div>
+    </div>
+    <div id="eva-prompt" class="hidden">Press E to send Neil Armstrong out</div>
+    <canvas id="game"></canvas>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

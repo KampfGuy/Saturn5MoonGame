@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #e8f0ff;
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#ui {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#phase-label {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.35rem;
+  letter-spacing: 0.28em;
+  font-weight: 700;
+  text-shadow: 0 0 18px #4af, 0 2px 8px #000;
+  color: #9fdfff;
+}
+
+#instructions {
+  position: absolute;
+  top: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(90vw, 640px);
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #dce9ff;
+  text-shadow: 0 1px 6px #000;
+  background: rgba(0, 12, 28, 0.45);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(120, 180, 255, 0.25);
+}
+
+#hud {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 0.9rem;
+  background: rgba(0, 10, 24, 0.55);
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(100, 160, 255, 0.3);
+  text-shadow: 0 1px 4px #000;
+}
+
+#eva-prompt {
+  position: fixed;
+  left: 50%;
+  bottom: 18%;
+  transform: translateX(-50%);
+  z-index: 12;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 10px;
+  background: rgba(20, 40, 10, 0.75);
+  border: 1px solid #8f8;
+  color: #cfc;
+  text-shadow: 0 0 12px #4f4;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.85; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.04); }
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+#overlay.hidden,
+#eva-prompt.hidden {
+  display: none;
+}
+
+#overlay-content {
+  text-align: center;
+  max-width: 640px;
+  padding: 32px 28px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(10, 30, 60, 0.95), rgba(5, 15, 30, 0.98));
+  border: 1px solid rgba(140, 200, 255, 0.45);
+  box-shadow: 0 0 40px rgba(60, 140, 255, 0.35);
+}
+
+#overlay-title {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+#overlay-text {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #cde;
+  margin-bottom: 22px;
+}
+
+#restart-btn {
+  pointer-events: auto;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 999px;
+  color: #041018;
+  background: linear-gradient(180deg, #9fe, #4bc);
+  box-shadow: 0 4px 18px rgba(80, 200, 255, 0.45);
+}
+
+#restart-btn:hover {
+  filter: brightness(1.08);
+}
+
+#restart-btn:active {
+  transform: translateY(1px);
+}
